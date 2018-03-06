@@ -1,15 +1,17 @@
 @echo off
 
-for /F "tokens=*" %%A in (C:\batch\TXT\Extensions.txt) do (
+for /F "tokens=*" %%A in (%HOMEPATH%\batch\TXT\Extensions.txt) do (
 	IF NOT EXIST "%USERPROFILE%\Desktop\Outros\%%A" (
-		echo Criando a pasta %%A
+		echo Creating folder %%A
 		mkdir "%USERPROFILE%\Desktop\Outros\%%A"
 	) ELSE (
-		echo Pasta %%A criada.
+		echo Folder %%A already exists.
 	)
 )
 
 cls
+
+echo Organizing Files... Hold On
 
 goto loop
 :loop
